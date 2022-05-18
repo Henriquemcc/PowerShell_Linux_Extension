@@ -7,5 +7,7 @@ enum CompressedArchiveType {
     MBR; MSI; NSIS; NTFS;
     QCOW2; RAR; RPM; SquashFS;
     UDF; UEFI; VDI; VHD; VHDX;
-    VMDK; XAR; Z;
+    VMDK; XAR; Z; TAR_GZIP; TAR_BZIP2;
+    TAR_XZ; TAR_LZ; TAR_LZMA; TAR_LZO; TAR_ZST;
+    LZ; LZO; ZST;
 }
