@@ -19,29 +19,6 @@ function Compress-File {
         throw "Destination path $DestinationPath already exist."
     }
 
-    <# Adding child files from all directories
-    if ($Recurse) {
-        Write-Host "Recurse"
-
-        # Getting a list with all files to be conpressed
-        $newList = [System.Collections.ArrayList]::new()
-        foreach ($item in $Path) {
-            $item = Get-Item -Path $Path
-            if ($item -is [System.IO.DirectoryInfo]) {
-                Write-Host "Directory"
-                $childFiles = Get-ChildItem -Path $item -Recurse -Force -ErrorAction Ignore
-                foreach ($childFile in $childFiles) {
-                    $newList.Add($childFile)
-                }
-            }
-            elseif ($item -is [System.IO.FileInfo]) {
-                Write-Host "File"
-                $newList.Add($item)
-            }
-        }
-        $Path = $newList.ToArray()
-    }#>
-
     # Getting Archive Type
     if (!$ArchiveType) {
         $extension = [System.IO.Path]::GetExtension($DestinationPath).ToLower()
