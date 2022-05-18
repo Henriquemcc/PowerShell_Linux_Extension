@@ -1,12 +1,11 @@
 using module .\CompressedArchiveType.psm1
 
-function Compress-File {
+function New-CompressedFile {
     param(
         [Parameter(Mandatory = $true)][System.String[]]$Path,
         [Parameter(Mandatory = $false)][System.String]$DestinationPath,
         [Parameter(Mandatory = $false)][System.Int32]$CompressionLevel,
         [Parameter(Mandatory = $false)][CompressedArchiveType]$ArchiveType,
-        # [Parameter(Mandatory = $false)][System.Management.Automation.SwitchParameter]$Encrypt,
         [Parameter(Mandatory = $false)][System.Security.SecureString]$Password,
         [Parameter(Mandatory = $false)][System.Management.Automation.SwitchParameter]$WhatIf,
         [Parameter(Mandatory = $false)][System.Management.Automation.SwitchParameter]$Confirm,
